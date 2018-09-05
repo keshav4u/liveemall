@@ -1,0 +1,15 @@
+.lgForgetPass {
+  position: relative;
+  color: #254a9c;
+  font-size: 13px;
+  width: 100%;
+  margin-bottom: 12px;
+  span {
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    z-index: 2;
+    right: 4px;
+    top: -24px;
+  }
+}

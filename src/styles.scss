@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import './assets/scss/var';
+.z-depth-1 {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.z-depth-1-half {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.z-depth-2 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.z-depth-3 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
+.z-depth-4 {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+}
+
+.z-depth-5 {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/*** global css ****/
+
+body {
+  height: auto;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button {
+  letter-spacing: .6px;
+}
+
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-tab-group.mat-primary .mat-ink-bar,
+  {
+  background-color: #cebf00;
+}
+
+app-root,
+app-main-nave {
+  display: block;
+}
+
+app-main-nave {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.mat-dialog-container {
+  background-color: transparent;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.inputSpinner {
+  position: absolute !important;
+  right: 4px;
+  top: 4px;
+}
+
+.spinnerButton {
+  display: flex !important;
+  align-items: center;
+  min-height: 36px;
+  justify-content: center;
+  .mat-progress-spinner circle,
+  .mat-spinner circle {
+    stroke: #eee;
+  }
+}
+
+.fullWidthBtn {
+  width: 100%;
+}
+
+/* form style */
+
+.logNdRegDilog {
+  width: 430px;
+  @media (max-width: 601px) {
+    width: 375px;
+    max-width: 375px !important;
+  }
+}
+
+.userLogin {
+  background: white;
+  @media (min-width: 601px) {}
+  .userLoginWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .lgfBody {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.userRegisteration {
+  @media (min-width: 601px) {}
+  .userRegisterWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .regForm {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      mat-form-field {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.formWrap {
+  padding: 30px 0px 0px;
+  @media (min-width: 450px) {}
+}
+
+.passShow {
+  position: absolute;
+  right: 4px;
+  bottom: -7px;
+  color: #254a9c;
+  cursor: pointer;
+}

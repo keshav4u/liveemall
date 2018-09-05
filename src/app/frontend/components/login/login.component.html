@@ -1,0 +1,26 @@
+<div class="userLogin formWrap">
+  <div class="userLoginWrap">
+    <div class="lgfHeader">
+    </div>
+    <form novalidate [formGroup]="userLogin" (submit)="onLogin()" class="lgfBody">
+      <mat-form-field>
+        <input type="text" matInput placeholder="Email/Mobile Number" formControlName="emailMobile" [pattern]="emailMobileRegexp">
+        <mat-spinner class="inputSpinner" *ngIf="checkEmailPhoneShow" [diameter]="20"></mat-spinner>
+        
+        <mat-error *ngIf="emailMobile.errors?.pattern"> Enter valid email or mobile number.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [type]="hide ? 'text' : 'password'" placeholder="Password" formControlName="password">
+        <mat-icon class="passShow" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        
+      </mat-form-field>
+      <div class="lgForgetPass">
+        <span>Forgot password?</span>
+      </div>
+      <button mat-raised-button color="primary" class="spinnerButton fullWidthBtn">
+        <span *ngIf="!checkLoginSpinnerShow">Login</span>
+        <mat-spinner *ngIf="checkLoginSpinnerShow" [diameter]="25"></mat-spinner>
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="loginNdRegister ">
+  <div class="loginNdRegisterHead">
+    <div class="LoginIcon">
+      <div>
+        <img src="assets\img\logo.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="mat-elevation-z4 loginNdRegisterWrap">
+    <div class="loginNdRegisterBody">
+      <app-login *ngIf="!loginShow"></app-login>
+      <app-register *ngIf="loginShow"></app-register>
+    </div>
+    <div class="loginNdRegisterFooter">
+      <div class="loginNdRegisterFooterHead">
+        <h5 *ngIf="!loginShow">
+          New to Liveemall?
+        </h5>
+        <h5 *ngIf="loginShow">
+          Existing User? 
+        </h5>
+      </div>
+      <div class="loginNdRegisterFooterBody">
+        <div class="loginNdRegisterFooterBodyWrap">
+          <button mat-raised-button class="signup fullWidthBtn" (click)="toggalLogNdReg()">
+            <span *ngIf="!loginShow">
+              Sign up
+            </span>
+            <span *ngIf="loginShow">
+              Log in
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

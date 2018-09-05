@@ -1,0 +1,55 @@
+<div class="userRegisteration formWrap">
+  <div class="userRegisterWrap">
+    <form novalidate [formGroup]="registerUser" (submit)="onRegistration()" class="regForm">
+
+      <mat-form-field>
+        <input type="text" matInput placeholder="First Name" formControlName="firstName" required md-autofocus>
+        <mat-error *ngIf="firstName.errors?.required">You must enter First Name</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="email" matInput placeholder="Email" [pattern]="emailRegx" formControlName="email" required>
+        <mat-spinner class="inputSpinner" *ngIf="checkEmailShow" [diameter]="20"></mat-spinner>
+        <mat-error *ngIf="email.errors?.required">You must enter Email</mat-error>
+        <mat-error *ngIf="email.errors?.pattern">Invalid Email Id</mat-error>
+        <mat-error *ngIf="email.errors?.emailTaken"> Oh noes, this Email {{email.value}} is already register! </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <span matPrefix>+91 &nbsp;</span>
+        <input matInput placeholder="Phone No." [pattern]="phoneRegx" formControlName="phone" required>
+        <mat-spinner class="inputSpinner" [diameter]="20" *ngIf="checkPhoneShow"></mat-spinner>
+        <mat-error *ngIf="phone.errors?.required">You must enter Phone Number</mat-error>
+        <mat-error *ngIf="phone.errors?.pattern">Invalid Phone Number </mat-error>
+        <mat-error *ngIf="phone.errors?.phoneTaken"> Oh noes, this Phone Number {{phone.value}} is already register! </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Username" formControlName="username" required>
+        <mat-spinner class="inputSpinner" [diameter]="20" *ngIf="checkUsernameShow"></mat-spinner>
+        <mat-error *ngIf="username.errors?.required">Username is required</mat-error>
+        <mat-error *ngIf="username.errors?.usernameTaken"> Oh noes, this Username {{username.value}} is already taken! </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [type]="pHide ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
+        <mat-icon class="passShow" matSuffix (click)="pHide = !pHide">{{pHide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="password.errors?.required">You must enter Password</mat-error>
+        <mat-error *ngIf="password.errors?.minlength">Password must be 8 characters long, we need another {{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}}
+          characters
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [type]="chHide ? 'password' : 'text'" placeholder="Confirm Password" [pattern]="password.value" formControlName="confirmPassword"
+          required>
+        <mat-icon class="passShow" matSuffix (click)="chHide = !chHide">{{chHide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="confirmPassword.errors?.required">You must enter Password</mat-error>
+        <mat-error *ngIf="confirmPassword.errors?.pattern">Password dose note match</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="spinnerButton fullWidthBtn">
+        <span *ngIf="!registerCheckShow">Continue</span>
+        <mat-spinner class="inputSpinner" *ngIf="registerCheckShow" [diameter]="20"></mat-spinner>
+      </button>
+    </form>
+  </div>
+</div>

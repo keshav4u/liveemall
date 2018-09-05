@@ -1,0 +1,65 @@
+.icon {
+  padding: 0 14px;
+}
+
+.menu_wrap {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 75%;
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
+  @media (max-width: 1024px) {
+    width: 90%;
+  }
+  @media (max-width:601px){
+      width: 100%;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    img {
+      width: 110px;
+      height: 37px;
+      cursor: pointer;
+      outline: none;
+    }
+    button {
+      font-size: 16px;
+      text-transform: capitalize;
+      font-family: inherit;
+      letter-spacing: .3px;
+      font-weight: 500;
+    }
+  }
+}
+
+.menu.mat-toolbar.mat-primary {
+  height: 56px;
+  min-height: 56px;
+  background: #224492;
+  align-items: center;
+  justify-content: center;
+}
+
+.is-mobile{
+  .toolbar {
+    position: fixed;
+    z-index: 2;
+  }
+  
+} 
+
+h1.app-name {
+  margin-left: 8px;
+}
+
+.companyLogo {
+  padding: 0em;
+}
+
+.loginNdRegisterBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

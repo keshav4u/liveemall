@@ -1,0 +1,18 @@
+<div class="" [class.is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="toolbar menu">
+    <mat-toolbar-row class="menu_wrap">
+      <div>
+        <img [routerLink]="['.']" src="assets\img\logo.png" alt="">
+      </div>
+      <div class="loginNdRegisterBtns">
+        <button *ngIf="authService.loggedIn()" mat-button [routerLink]="['/profile']">Profile</button>
+        <div class="loginNdRegisterBtns" *ngIf="!authService.loggedIn()">
+          <button mat-button (click)="openLoginDialog()">Login & Signup</button>
+        </div>
+        <div *ngIf="authService.loggedIn()">
+          <button mat-button (click)="onLogoutClick()">logout</button>
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
